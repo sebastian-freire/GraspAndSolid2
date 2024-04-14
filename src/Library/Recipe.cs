@@ -10,6 +10,20 @@ using System.Text;
 
 namespace Full_GRASP_And_SOLID.Library
 {
+    /*
+    Segun el principio SRP una clase solo debe tener una unica razon para cambiar.
+    Anteriormente esta clase tenia mas de una, una de ellas siendo si se queria cambiar el metodo de impresion y 
+    la otra si se querian agregar atributos adicionales a las recetas.
+
+    Con esto en mente se decide crear una clase ConsolePrinter. Esta clase sera la encargada de imprimir en consola.
+
+    -------¿Pero como recibe el texto que tiene que imprimir?--------
+    La clase recipe generara un stringBuilder con el texto que se desea imprimir mediante el metodo StringRecipe.
+    Y en la clase ConsolePrinter hay un metodo Imprimir que recibe como parametro un stringBuilder y lo imprime en consola.
+
+    De esta manera se pueden implementar varias formas de impresion utilizando el texto generado por el metodo
+    StringRecipe.
+    */
     public class Recipe
     {
         private ArrayList steps = new ArrayList();
