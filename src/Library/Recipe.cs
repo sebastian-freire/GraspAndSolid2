@@ -26,7 +26,7 @@ namespace Full_GRASP_And_SOLID.Library
             this.steps.Remove(step);
         }
 
-        public void StringRecipe()
+        public StringBuilder StringRecipe()
         {
             StringBuilder stringBuilder= new StringBuilder();
             stringBuilder.Append($"\nReceta de {this.FinalProduct.Description}:\n");
@@ -35,7 +35,7 @@ namespace Full_GRASP_And_SOLID.Library
                 stringBuilder.Append($"{step.Quantity} de '{step.Input.Description}' " +
                     $"usando '{step.Equipment.Description}' durante {step.Time}\n");
             }
-            ConsolePrinter.Imprimir(stringBuilder);
+            return stringBuilder;
         }
     }
 }
